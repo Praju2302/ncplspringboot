@@ -32,16 +32,18 @@ stage ('Build') {
 
 
 stage('Sonar Analysis') {
-      environment {
-        scannerHome = tool 'SonarQubeScanner'
-      }
-      steps {
-        echo '<--------------- Sonar Analysis started  --------------->'
-                withSonarQubeEnv('SonarQubeScanner') {
-                sh "${scannerHome}/bin/sonar-scanner"
-                }       
-         }
-      }
+  environment {
+    scannerHome = tool 'SonarQubeScanner'
+    sonarToken = '9b2717952459d38e4f2b5919b1dae66ea4dca970'
+  }
+  steps {
+    echo '<--------------- Sonar Analysis started  --------------->'
+    withSonarQubeEnv('SonarQubeScanner') {
+      sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${sonarToken}"
+    }       
+  }
+}
+
 stage('Quality Gate') {
       steps {
         script {
