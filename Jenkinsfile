@@ -87,7 +87,7 @@ stage("Jar Publish") {
             steps {
                 script {
                     // Build the Docker image
-                    sh ' sudo docker build -t myrepo .'
+                    sh ' docker build -t myrepo .'
                 }
             }
     }
