@@ -96,7 +96,7 @@ stage("Jar Publish") {
     stage('Pushing to ECR') {
      steps{  
          script {
-                sh 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 251254236023.dkr.ecr.eu-central-1.amazonaws.com'
+                sh 'aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 251254236023.dkr.ecr.eu-central-1.amazonaws.com'
                 sh 'docker tag myrepo:latest 251254236023.dkr.ecr.eu-central-1.amazonaws.com/myrepo:latest'
                 sh 'docker push 251254236023.dkr.ecr.eu-central-1.amazonaws.com/myrepo:latest'
          }
