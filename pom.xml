@@ -5,8 +5,8 @@
  
     <groupId>com.tcs.angularjs</groupId>
     <artifactId>springbootApp</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
     <name>MyAwesomeApp</name>
     <description>SpringBoot Angularjs</description>
  
